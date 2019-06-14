@@ -8,10 +8,10 @@ module.exports = menu;
 /**
  * Load dependencies
  */
-const helpers = require('../lib/helpers');
+const helpers = require('../../lib/helpers');
 
 // Prevent changes in the menu
-const menu_items = require('../assets/menu_items');
+const menu_items = require('../../assets/menu_items');
 
 menu.get_collection = (request, callback) => {
 

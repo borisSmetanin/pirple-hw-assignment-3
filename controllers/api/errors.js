@@ -13,4 +13,13 @@ errors.not_found = (payload, callback) => {
     );
 }
 
+errors.not_found_web = (payload, callback) => {
+    callback(
+        404, 
+        'Requested route was not found in this server',
+        '<h1>Requested route was not found in this server </h1>',
+        'html'
+    );
+}
+
  

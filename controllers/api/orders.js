@@ -10,11 +10,11 @@
  // Load dependencies
 
  let 
-    helpers         = require('../lib/helpers'),
-    file_model      = require('../lib/file_model'),
-    menu_items      = require('../assets/menu_items'),
-    stripe_connect  = require('../lib/stripe_connect'),
-    mailgun_connect = require('../lib/mailgun_connect');
+    helpers         = require('../../lib/helpers'),
+    file_model      = require('../../lib/file_model'),
+    menu_items      = require('../../assets/menu_items'),
+    stripe_connect  = require('../../lib/stripe_connect'),
+    mailgun_connect = require('../../lib/mailgun_connect');
 
 
 

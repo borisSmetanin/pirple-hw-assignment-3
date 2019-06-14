@@ -11,8 +11,8 @@ module.exports = users;
  */
 
 let 
-    file_model = require('../lib/file_model'),
-    helpers    = require('../lib/helpers');
+    file_model = require('../../lib/file_model'),
+    helpers    = require('../../lib/helpers');
 
 // This object contains all possible user fields and the their validation rules
 const user_fields_validation_rules = {

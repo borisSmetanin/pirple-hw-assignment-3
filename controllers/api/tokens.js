@@ -11,8 +11,8 @@ module.exports = tokens;
  */
 
 let 
-    file_model = require('../lib/file_model'),
-    helpers    = require('../lib/helpers'),
+    file_model = require('../../lib/file_model'),
+    helpers    = require('../../lib/helpers'),
     crypto     = require('crypto');
 
 const hour_in_milliseconds = 3600000;
