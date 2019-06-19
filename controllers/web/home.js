@@ -1,21 +1,31 @@
 const home = {};
 
+const helpers = require('../../lib/helpers');
+
 module.exports = home;
 
 home.index = (payload, callback) => {
 
-    // (http_code, error, payload, response_type
-    callback(200, false, '<h1>Home page</h1>', 'html');
+    helpers.load_web_page('home', [], {title: 'Home Title'}, (err, html_page) => {
+
+        if ( ! err && html_page) {
+            // (http_code, error, payload, response_type
+            callback(200, false, html_page, 'html');
+        } else {
+            callback(500, true, 'something  went wrong!', 'html');
+        }
+    });
 }
 
 home.test = (payload, callback) => {
 
-    // (http_code, error, payload, response_type
-    callback(200, false, '<h1>some other page</h1>', 'html');
-}
+    helpers.load_web_page('home', [], {title: 'Home Title'}, (err, html_page) => {
 
-home.not_found = (payload, callback) => {
-
-    // (http_code, error, payload, response_type
-    callback(404, true, '<h1>Page not found</h1>', 'html');
+        if ( ! err && html_page) {
+            // (http_code, error, payload, response_type
+            callback(200, false, html_page, 'html');
+        } else {
+            callback(500, true, 'something  went wrong!', 'html');
+        }
+    });
 }
