@@ -19,7 +19,9 @@ home.index = (payload, callback) => {
 
 home.test = (payload, callback) => {
 
-    helpers.load_web_page('home', [], {title: 'Home Title'}, (err, html_page) => {
+    const file_model = require('../../lib/file_model');
+
+    file_model.read_html('html_pages', 'test',(err, html_page) => {
 
         if ( ! err && html_page) {
             // (http_code, error, payload, response_type

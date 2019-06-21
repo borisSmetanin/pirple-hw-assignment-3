@@ -5,20 +5,21 @@ const file_model =require('../../lib/file_model');
 
 web_assets.fetch_asset = (payload, callback) => {
 
-    let allowed_assets = [ 'css', 'js', 'img' ];
+    
+    
+    file_model.read_public_file('assets', payload.asset_file_path, (err, asset, type) => {
+        
+        if ( ! err && asset) {
+            
+            let allowed_assets = [ 'css', 'js', 'png', 'jpg' ];
+            if (allowed_assets.includes(type)) {
 
-    if (allowed_assets.includes(payload.asset_type)) {
-
-        file_model.read_public_file('assets', payload.asset_file_path, (err, asset) => {
-
-            if ( ! err && asset) {
-                
-                callback(200, false, asset, payload.asset_type );
+                callback(200, false, asset, type );
             } else {
-                callback(500, true, { err: 'Internal error'});
+                callback(412, true, { err: 'Invalid asset type'});
             }
-        });
-    } else {
-        callback(412, true, { err: 'Invalid asset type'});
-    }
+        } else {
+            callback(500, true, { err: 'Internal error'});
+        }
+    });
 }
