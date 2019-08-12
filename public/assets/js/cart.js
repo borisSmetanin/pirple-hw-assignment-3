@@ -76,8 +76,6 @@ App.complete_payment_dialog = () => {
                             pizza_order_request.push_subscription = App.PUSH_SUBSCRIPTION;
                         }
 
-                        
-                        // TODO in  here!! - send we push as well
                         const result = await App.send_ajax_request('api/orders', 'POST', pizza_order_request);
 
                        // Set success message 
